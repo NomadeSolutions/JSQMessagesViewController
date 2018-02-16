@@ -124,6 +124,7 @@ JSQMessagesKeyboardControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet JSQMessagesCollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet JSQMessagesInputToolbar *inputToolbar;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarBottomLayoutGuide;
@@ -278,6 +279,7 @@ JSQMessagesKeyboardControllerDelegate>
 
     [super viewWillAppear:animated];
     self.toolbarHeightConstraint.constant = self.inputToolbar.preferredDefaultHeight;
+    self.bottomView.backgroundColor = self.inputToolbar.contentView.backgroundColor;
     [self.view layoutIfNeeded];
     [self.collectionView.collectionViewLayout invalidateLayout];
 
